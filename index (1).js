@@ -8,26 +8,20 @@ const eventServer = "https://api.nileex.io";
 const privateKey = "bdd82b8797e761445bf5b4e09431a33de4aa80319ee570edf4962b37e1895e37";
 const tronWeb = new TronWeb(fullNode, solidityNode, eventServer, privateKey);
 const contractAddress = 'TFnWi5CYC2T93YkvW81rXXXCxh898nZ9M3';
-const contractABI = JSON.parse('{"entrys":[{"outputs":[{"type":"string"}],"constant":true,"name":"name","stateMutability":"View","type":"Function"},{"outputs":[{"type":"bool"}],"inputs":[{"name":"spender","type":"address"},{"name":"amount","type":"uint256"}],"name":"approve","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"newTransactionFee","type":"uint256"}],"name":"setTransactionFee","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint256"}],"constant":true,"name":"totalSupply","stateMutability":"View","type":"Function"},{"outputs":[{"type":"bool"}],"inputs":[{"name":"sender","type":"address"},{"name":"recipient","type":"address"},{"name":"amount","type":"uint256"}],"name":"transferFrom","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint8"}],"constant":true,"name":"decimals","stateMutability":"View","type":"Function"},{"outputs":[{"type":"bool"}],"inputs":[{"name":"spender","type":"address"},{"name":"addedValue","type":"uint256"}],"name":"increaseAllowance","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"account","type":"address"},{"name":"amount","type":"uint256"}],"name":"mint","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"amount","type":"uint256"}],"name":"burn","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"newBurnFee","type":"uint256"}],"name":"setBurnFee","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"account","type":"address"},{"name":"isWhitelisted","type":"bool"}],"name":"setWhitelist","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"recipients","type":"address[]"},{"name":"amounts","type":"uint256[]"}],"name":"airdrop","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint256"}],"constant":true,"inputs":[{"name":"account","type":"address"}],"name":"balanceOf","stateMutability":"View","type":"Function"},{"name":"renounceOwnership","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint256"}],"constant":true,"name":"getTransactionFee","stateMutability":"View","type":"Function"},{"inputs":[{"name":"recipients","type":"address[]"},{"name":"amounts","type":"uint256[]"}],"name":"batchTransfer","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"address"}],"constant":true,"name":"owner","stateMutability":"View","type":"Function"},{"outputs":[{"type":"bool"}],"constant":true,"name":"isOwner","stateMutability":"View","type":"Function"},{"outputs":[{"type":"string"}],"constant":true,"name":"symbol","stateMutability":"View","type":"Function"},{"outputs":[{"type":"bool"}],"inputs":[{"name":"spender","type":"address"},{"name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"bool"}],"inputs":[{"name":"recipient","type":"address"},{"name":"amount","type":"uint256"}],"name":"transfer","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint256"}],"constant":true,"name":"getBurnFee","stateMutability":"View","type":"Function"},{"inputs":[{"name":"newValue","type":"uint256"}],"name":"rebase","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint256"}],"constant":true,"inputs":[{"name":"owner","type":"address"},{"name":"spender","type":"address"}],"name":"allowance","stateMutability":"View","type":"Function"},{"inputs":[{"name":"newMETRXFee","type":"uint256"}],"name":"setMETRXFee","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","stateMutability":"Nonpayable","type":"Function"},{"stateMutability":"Nonpayable","type":"Constructor"},{"inputs":[{"name":"newTransactionFee","type":"uint256"}],"name":"TransactionFeeSet","type":"Event"},{"inputs":[{"name":"newBurnFee","type":"uint256"}],"name":"BurnFeeSet","type":"Event"},{"inputs":[{"indexed":true,"name":"account","type":"address"},{"name":"isWhitelisted","type":"bool"}],"name":"WhitelistUpdated","type":"Event"},{"inputs":[{"indexed":true,"name":"to","type":"address"},{"name":"value","type":"uint256"}],"name":"Airdropped","type":"Event"},{"inputs":[{"name":"oldValue","type":"uint256"},{"name":"newValue","type":"uint256"}],"name":"Rebasing","type":"Event"},{"inputs":[{"indexed":true,"name":"previousOwner","type":"address"},{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"Event"},{"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"name":"value","type":"uint256"}],"name":"Transfer","type":"Event"},{"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"name":"value","type":"uint256"}],"name":"Approval","type":"Event"}]}');
+const contractABI = [{"outputs":[{"type":"string"}],"constant":true,"name":"name","stateMutability":"View","type":"Function"},{"outputs":[{"type":"bool"}],"inputs":[{"name":"spender","type":"address"},{"name":"amount","type":"uint256"}],"name":"approve","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"newTransactionFee","type":"uint256"}],"name":"setTransactionFee","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint256"}],"constant":true,"name":"totalSupply","stateMutability":"View","type":"Function"},{"outputs":[{"type":"bool"}],"inputs":[{"name":"sender","type":"address"},{"name":"recipient","type":"address"},{"name":"amount","type":"uint256"}],"name":"transferFrom","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint8"}],"constant":true,"name":"decimals","stateMutability":"View","type":"Function"},{"outputs":[{"type":"bool"}],"inputs":[{"name":"spender","type":"address"},{"name":"addedValue","type":"uint256"}],"name":"increaseAllowance","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"account","type":"address"},{"name":"amount","type":"uint256"}],"name":"mint","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"amount","type":"uint256"}],"name":"burn","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"newBurnFee","type":"uint256"}],"name":"setBurnFee","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"account","type":"address"},{"name":"isWhitelisted","type":"bool"}],"name":"setWhitelist","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"recipients","type":"address[]"},{"name":"amounts","type":"uint256[]"}],"name":"airdrop","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint256"}],"constant":true,"inputs":[{"name":"account","type":"address"}],"name":"balanceOf","stateMutability":"View","type":"Function"},{"name":"renounceOwnership","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint256"}],"constant":true,"name":"getTransactionFee","stateMutability":"View","type":"Function"},{"inputs":[{"name":"recipients","type":"address[]"},{"name":"amounts","type":"uint256[]"}],"name":"batchTransfer","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"address"}],"constant":true,"name":"owner","stateMutability":"View","type":"Function"},{"outputs":[{"type":"bool"}],"constant":true,"name":"isOwner","stateMutability":"View","type":"Function"},{"outputs":[{"type":"string"}],"constant":true,"name":"symbol","stateMutability":"View","type":"Function"},{"outputs":[{"type":"bool"}],"inputs":[{"name":"spender","type":"address"},{"name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"bool"}],"inputs":[{"name":"recipient","type":"address"},{"name":"amount","type":"uint256"}],"name":"transfer","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint256"}],"constant":true,"name":"getBurnFee","stateMutability":"View","type":"Function"},{"inputs":[{"name":"newValue","type":"uint256"}],"name":"rebase","stateMutability":"Nonpayable","type":"Function"},{"outputs":[{"type":"uint256"}],"constant":true,"inputs":[{"name":"owner","type":"address"},{"name":"spender","type":"address"}],"name":"allowance","stateMutability":"View","type":"Function"},{"inputs":[{"name":"newMETRXFee","type":"uint256"}],"name":"setMETRXFee","stateMutability":"Nonpayable","type":"Function"},{"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","stateMutability":"Nonpayable","type":"Function"},{"stateMutability":"Nonpayable","type":"Constructor"},{"inputs":[{"name":"newTransactionFee","type":"uint256"}],"name":"TransactionFeeSet","type":"Event"},{"inputs":[{"name":"newBurnFee","type":"uint256"}],"name":"BurnFeeSet","type":"Event"},{"inputs":[{"indexed":true,"name":"account","type":"address"},{"name":"isWhitelisted","type":"bool"}],"name":"WhitelistUpdated","type":"Event"},{"inputs":[{"indexed":true,"name":"to","type":"address"},{"name":"value","type":"uint256"}],"name":"Airdropped","type":"Event"},{"inputs":[{"name":"oldValue","type":"uint256"},{"name":"newValue","type":"uint256"}],"name":"Rebasing","type":"Event"},{"inputs":[{"indexed":true,"name":"previousOwner","type":"address"},{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"Event"},{"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"name":"value","type":"uint256"}],"name":"Transfer","type":"Event"},{"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"name":"value","type":"uint256"}],"name":"Approval","type":"Event"}]
+
+
 const bot = new TelegramBot(token, { polling: true });
 const contract = tronWeb.contract(contractABI, contractAddress);
 
-
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
-  bot.sendMessage(chatId, 'Добро пожаловать! Введите команду для управления вашим смарт-контрактом.');
+  bot.sendMessage(chatId, 'Добро пожаловать! Введите команду для управления вашим смарт-контрактом.\n/balance (кош) - узнать баланс адреса.\n/transfer (кош) (сумма) - отправить на указанный адрес н-ное еоличество алеф.\n/totalsupply - общее количество выпущенных токенов');
 });
 
 bot.onText(/\/balance(?:\s+([a-zA-Z0-9]+))?/, async (msg, match) => {
   const chatId = msg.chat.id;
   const inputAddress = match[1]; // получить адрес из введенного текста
-  let contract;
-
-  try {
-    contract = await tronWeb.contract(contractABI).at(contractAddress);
-  } catch (error) {
-    console.error("Ошибка при создании контракта:", error);
-  }
 
   const addressToCheck = inputAddress || tronWeb.defaultAddress.base58; // использовать введенный адрес или адрес по умолчанию
 
@@ -41,10 +35,9 @@ bot.onText(/\/balance(?:\s+([a-zA-Z0-9]+))?/, async (msg, match) => {
 
   bot.sendMessage(
     chatId,
-    `Баланс адреса ${addressToCheck}: ${formattedBalance} Алефиков`
+    `Баланс адреса ${addressToCheck}: ${formattedBalance} ALEF`
   );
 });
-
 
 bot.onText(/\/transfer (.+)/, async (msg, match) => {
   const chatId = msg.chat.id;
@@ -154,10 +147,6 @@ bot.onText(/\/rebase (.+)/, async (msg, match) => {
   }
 });
 
-
-
-
-
 bot.onText(/\/airdrop (.+)/, async (msg, match) => {
   const chatId = msg.chat.id;
   const args = match[1].split(' ');
@@ -169,6 +158,10 @@ bot.onText(/\/airdrop (.+)/, async (msg, match) => {
 
   bot.sendMessage(chatId, `Airdrop выполнен. Транзакция: ${result}`);
 });
+
+
+
+
 
 bot.onText(/\/mint (.+)/, async (msg, match) => {
     const chatId = msg.chat.id;
@@ -190,13 +183,20 @@ bot.onText(/\/mint (.+)/, async (msg, match) => {
 
 bot.onText(/\/burn (.+)/, async (msg, match) => {
   const chatId = msg.chat.id;
-  const amount = tronWeb.toSun(parseFloat(match[1]));
+  const parsedAmount = parseFloat(match[1]);
 
+  if (isNaN(parsedAmount) || parsedAmount <= 0) {
+    bot.sendMessage(chatId, "Введите корректное значение суммы для сжигания токенов.");
+    return;
+  }
+
+  const amount = tronWeb.toSun(parsedAmount);
   const contract = await tronWeb.contract(contractABI).at(contractAddress);
   const result = await contract.burn(amount).send();
 
   bot.sendMessage(chatId, `Сжигание токенов выполнено на сумму ${tronWeb.fromSun(amount)} TRX. Транзакция: ${result}`);
 });
+
 
 bot.onText(/\/setMETRX (.+)/, async (msg, match) => {
   const chatId = msg.chat.id;
